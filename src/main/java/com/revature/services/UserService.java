@@ -1,10 +1,12 @@
 package com.revature.services;
 
 import com.revature.daos.UserDAO;
+import com.revature.dtos.OutUserDTO;
 import com.revature.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,8 +36,16 @@ public class UserService {
         return uDAO.save(newUser);
     }
 
-    public List<User> getAllUsers() {
-        return uDAO.findAll();
+    public List<OutUserDTO> getAllUsers() {
+        List<User> users = uDAO.findAll();
+
+        List<OutUserDTO> outUsers = new ArrayList<OutUserDTO>();
+
+        for(User u : users) {
+            outUsers.add(new OutUserDTO(u.getUser_id(), u.getUsername(), u.getFirst_name(), u.getLast_name(), u.getTitle()));
+        }
+
+        return outUsers;
     }
 
     public void deleteUser(String username) {

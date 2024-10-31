@@ -33,14 +33,9 @@ public class UserController {
     @GetMapping
     public ResponseEntity<List<OutUserDTO>> getAllUsers() {
 
-        List<User> allUsers = userService.getAllUsers();
-        List<OutUserDTO> outUsers= new ArrayList<OutUserDTO>();
+        List<OutUserDTO> allUsers = userService.getAllUsers();
 
-        for (User u: allUsers) {
-            outUsers.add(new OutUserDTO(u.getUser_id(), u.getUsername(), u.getFirst_name(),
-                    u.getLast_name(), u.getTitle()));
-        }
-        return ResponseEntity.ok(outUsers);
+        return ResponseEntity.ok(allUsers);
     }
 
     @DeleteMapping("/{username}")
