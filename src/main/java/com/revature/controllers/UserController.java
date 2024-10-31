@@ -1,14 +1,13 @@
 package com.revature.controllers;
 
 import com.revature.daos.UserDAO;
-import com.revature.dtos.OutUserDTO;
+import com.revature.models.dtos.OutUserDTO;
 import com.revature.models.User;
 import com.revature.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

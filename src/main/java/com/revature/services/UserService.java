@@ -1,7 +1,7 @@
 package com.revature.services;
 
 import com.revature.daos.UserDAO;
-import com.revature.dtos.OutUserDTO;
+import com.revature.models.dtos.OutUserDTO;
 import com.revature.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

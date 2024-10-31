@@ -1,4 +1,4 @@
-package com.revature.dtos;
+package com.revature.models.dtos;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
